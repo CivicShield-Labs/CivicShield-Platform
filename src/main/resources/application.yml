@@ -1,5 +1,7 @@
 server:
   port: ${PORT:8080}
+  tomcat:
+    max-http-form-post-size: 64KB
 
 spring:
   application:
@@ -21,7 +23,11 @@ spring:
   security:
     user:
       name: ${CIVICSHIELD_ADMIN_USER:civicshield}
-      password: ${CIVICSHIELD_ADMIN_PASSWORD:change-this-before-any-deployment}
+      password: ${CIVICSHIELD_ADMIN_PASSWORD}
+
+civicshield:
+  security:
+    admin-agency-id: ${CIVICSHIELD_ADMIN_AGENCY_ID:}
 
 management:
   endpoints:
